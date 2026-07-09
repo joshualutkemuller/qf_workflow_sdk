@@ -17,6 +17,16 @@ jobs:
           test -s agentic_dictionary.md
           test -s docs/sdk_plan.md
           test -s docs/handoff.md
+      - name: Validate public agent contracts
+        run: |
+          for agent in agents/*; do
+            if [ -d "$agent" ]; then
+              test -s "$agent/README.md"
+              test -s "$agent/prompt.md"
+              test -s "$agent/instructions.md"
+              test -s "$agent/tasks.md"
+            fi
+          done
       - name: Validate shell scripts
         run: |
           sh -n setup-hooks.sh

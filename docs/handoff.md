@@ -36,7 +36,15 @@ qf_workflow_sdk/
   setup-hooks.sh
 ```
 
-The public folders `agents/`, `hooks/`, `instructions/`, and `prompts/` are currently empty and are the right places to build the quant-focused SDK surface.
+The public folders now contain the first working SDK slice:
+
+- `agents/`: Research Analyst, Data Quality, and Backtest Review agents.
+- `instructions/`: reusable standards for research, data quality, backtesting, model validation, documentation, and Git workflow.
+- `prompts/`: task-ready prompts for research plans, dataset cards, model cards, backtest reviews, experiment summaries, handoff memos, and PR review checklists.
+- `templates/docs/`: reusable document templates.
+- `examples/alpha_signal_handoff/`: a lightweight end-to-end example.
+
+The `hooks/` folder is still a placeholder for future public hook implementations. The active Git hooks live in `.githooks/`.
 
 ## Important Context
 
@@ -50,7 +58,7 @@ The current repo contains hidden agent files and hooks that act as seed examples
 
 ## Recommended Next Move
 
-Start with the public agent catalog. The first useful slice should be:
+The first useful public agent slice has been added:
 
 ```text
 agents/
@@ -75,12 +83,11 @@ These three agents cover the workflow from hypothesis to data inspection to simu
 
 ## Suggested Implementation Order
 
-1. Add the first three public agents: Research Analyst, Data Quality, and Backtest Review.
-2. Add shared instruction files under `instructions/`.
-3. Add task prompts under `prompts/`.
-4. Add document templates under a new `templates/docs/` folder.
-5. Add examples that show full workflows from hypothesis to handoff.
-6. Add stronger CI checks for Markdown, links, and public agent contracts.
+1. Add the next public agents: Feature Engineering, Modeling, Risk, Documentation, and Git/Release.
+2. Add public hook scripts under `hooks/` for notebooks, artifacts, secrets, and documentation freshness.
+3. Add an adoption guide for existing quant repos.
+4. Add stronger CI checks for Markdown, links, and public agent contracts.
+5. Decide whether the SDK remains a copyable scaffold or grows a CLI.
 
 ## First Public Agent Acceptance Criteria
 
@@ -143,7 +150,7 @@ The current CI performs lightweight SDK validation. Future CI improvements could
 
 ## Definition Of Done For The Next Slice
 
-The next slice is complete when:
+The initial public build-out slice is complete when:
 
 - At least three quant-focused public agents exist.
 - No user-facing guidance points to obsolete app-specific workflows.

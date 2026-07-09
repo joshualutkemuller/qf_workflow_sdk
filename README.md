@@ -27,6 +27,8 @@ qf_workflow_sdk/
   hooks/
   instructions/
   prompts/
+  templates/
+  examples/
   docs/
 ```
 
@@ -35,8 +37,21 @@ Current state notes:
 - `.agents/` contains seed agent examples for general, Git, and design-oriented workflows.
 - `.githooks/` contains seed Git hooks.
 - `.github/` contains seed GitHub workflow and contribution templates.
-- `agents/`, `hooks/`, `instructions/`, and `prompts/` are the intended public SDK surfaces.
+- `agents/`, `hooks/`, `instructions/`, `prompts/`, `templates/`, and `examples/` are the intended public SDK surfaces.
 - The old app-specific assets have been removed from the working tree; the remaining seed files now describe the SDK workflow.
+
+## Public Agents
+
+- `agents/research_analyst/`: turns hypotheses into research plans, assumptions, validation gates, and handoff-ready next actions.
+- `agents/data_quality/`: reviews datasets, joins, timestamps, lineage, missingness, and leakage risks.
+- `agents/backtest_review/`: reviews historical simulations for bias, execution realism, robustness, risk, and production-readiness.
+
+Each public agent follows the same contract:
+
+- `README.md`
+- `prompt.md`
+- `instructions.md`
+- `tasks.md`
 
 ## Main Concepts
 
@@ -47,6 +62,30 @@ Current state notes:
 - Templates define repeatable artifacts such as research memos, dataset cards, model cards, experiment reports, and handoff memos.
 
 See `agentic_dictionary.md` for the shared vocabulary.
+
+## Public Instructions
+
+- `instructions/quant_research.md`
+- `instructions/data_quality.md`
+- `instructions/backtesting.md`
+- `instructions/model_validation.md`
+- `instructions/documentation.md`
+- `instructions/git_workflow.md`
+
+## Prompt Library
+
+- `prompts/research_plan.md`
+- `prompts/dataset_card.md`
+- `prompts/model_card.md`
+- `prompts/backtest_review.md`
+- `prompts/experiment_summary.md`
+- `prompts/handoff_memo.md`
+- `prompts/pr_review_checklist.md`
+
+## Templates And Examples
+
+- `templates/docs/`: research memo, dataset card, model card, backtest report, experiment summary, handoff memo, and production readiness checklist.
+- `examples/alpha_signal_handoff/`: an end-to-end example showing how the SDK artifacts connect for a hypothetical alpha signal.
 
 ## Suggested Quant Workflow
 
@@ -76,11 +115,10 @@ The current hooks are seed examples and should be updated before relying on them
 
 ## Recommended Next Steps
 
-- Build public agents under `agents/`.
-- Add reusable instructions under `instructions/`.
-- Add task prompts under `prompts/`.
-- Add document templates under `templates/docs/`.
-- Replace app-specific hooks and CI with SDK validation checks.
+- Add Feature Engineering, Modeling, Risk, Documentation, and Git/Release agents.
+- Add hook scripts for notebook output, large artifacts, secrets, and stale docs.
+- Add an adoption guide for installing the SDK into existing quant repositories.
+- Add a lightweight CLI or copier workflow if the SDK should be installed rather than copied manually.
 
 ## Design Principles
 

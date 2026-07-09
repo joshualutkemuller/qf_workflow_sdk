@@ -13,7 +13,8 @@ The repository already contains a useful skeleton:
 - `.agents/` contains role-specific assistant files for general, Git, and design workflows.
 - `.githooks/` contains commit, pre-commit, and pre-push hooks.
 - `.github/` contains CI, PR, issue, Dependabot, and Git workflow templates.
-- `agents/`, `hooks/`, `instructions/`, and `prompts/` exist as top-level public SDK folders, but are currently empty.
+- `agents/`, `instructions/`, `prompts/`, `templates/`, and `examples/` contain the initial public SDK slice.
+- `hooks/` exists as the future public hook surface, while active local Git hooks live in `.githooks/`.
 - `setup-hooks.sh` wires local Git hooks into a checkout.
 
 The working tree has been reshaped away from the older app layout and toward the SDK structure described here.
@@ -191,12 +192,10 @@ The hidden `.agents/` folder can remain as adapter-specific or internal agent me
 
 ## Near-Term Backlog
 
-- Add `agents/research_analyst/` with initial prompt, instructions, and task catalog.
-- Add `agents/data_quality/` with checks for joins, timestamps, coverage, missingness, and leakage.
-- Add `instructions/backtesting.md` with a practical bias and fragility checklist.
-- Add `prompts/model_card.md`, `prompts/dataset_card.md`, and `prompts/experiment_summary.md`.
-- Add `templates/docs/research_memo.md` and `templates/docs/model_card.md`.
-- Update CI from Node/Vite assumptions to SDK validation checks.
+- Add `agents/feature_engineering/`, `agents/modeling/`, `agents/risk/`, `agents/documentation/`, and `agents/git_release/`.
+- Add public hook scripts for notebook output, large artifacts, secrets, and stale docs.
+- Add richer examples for risk models, forecast models, and production handoff.
+- Add Markdown link checks and public agent contract validation in CI.
 - Add an adoption guide for using the SDK in an existing quant repo.
 
 ## Open Decisions
