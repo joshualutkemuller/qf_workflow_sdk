@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate required SDK docs
+        run: |
+          test -s README.md
+          test -s agentic_dictionary.md
+          test -s docs/sdk_plan.md
+          test -s docs/handoff.md
+      - name: Validate shell scripts
+        run: |
+          sh -n setup-hooks.sh
+          for hook in .githooks/*; do sh -n "$hook"; done

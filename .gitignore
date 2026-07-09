@@ -1,0 +1,24 @@
+# OS metadata
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Build and generated output
+dist/
+build/
+*.egg-info/
+
+# Local logs
+*.log

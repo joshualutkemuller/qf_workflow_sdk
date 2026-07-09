@@ -1,0 +1,14 @@
+#!/bin/sh
+# Commit-msg hook for QF Workflow SDK: encourage Conventional Commit style.
+
+commit_msg_file="$1"
+if [ ! -s "$commit_msg_file" ]; then
+  echo "Empty commit message not allowed."
+  exit 1
+fi
+
+if ! grep -qE '^(feat|fix|docs|chore|refactor|perf|test|build|ci)(\(.+\))?: .+' "$commit_msg_file"; then
+  echo "Commit message should follow Conventional Commits: type(scope?): description"
+  echo "Example: docs(agents): add data quality review agent"
+  exit 1
+fi

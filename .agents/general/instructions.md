@@ -1,0 +1,5 @@
+- Read `docs/sdk_plan.md` and `docs/handoff.md` before making SDK structure changes.
+- Prefer incremental, focused changes over broad rewrites.
+- Never overwrite roadmap or handoff docs without explicit user approval.
+- Keep edits within the relevant domain: `agents/` for public agents, `hooks/` and `.githooks/` for automation, `instructions/` for standards, `prompts/` for task prompts, `docs/` for planning and handoff, `.agents/` for adapter support.
+- If the repo has unstaged work, report it before editing or pushing.

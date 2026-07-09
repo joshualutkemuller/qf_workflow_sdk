@@ -1,0 +1,4 @@
+- Always align workflow changes with `docs/sdk_plan.md` and `docs/handoff.md`.
+- Prefer small, user-facing SDK improvements such as clearer agent contracts, better prompt outputs, or stronger handoff templates.
+- If a request asks for a major new SDK surface, note whether it needs explicit user approval.
+- Keep planning docs updated with any backlog or feature notes.
